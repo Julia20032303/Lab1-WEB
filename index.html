@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Speed Wheels</title>
+    <style>
+        header {
+            background: linear-gradient(to top, #ffffff 0%, #f9dd94 100%);
+            color: #000000;
+            padding: 30px;
+            margin: -10px;
+            font-family: Georgia, serif;
+        }
+
+        h1 {
+            margin: -1px;
+            margin-bottom: -2px;
+        }
+
+        h2 {
+            margin: -1px;
+            margin-bottom: -2px;
+        }
+
+        h3 {
+
+            position: absolute;
+            top: 30px;
+            right: 50px;
+        }
+
+        p3 {
+            margin: -1px;
+            margin-bottom: -2px;
+            position: absolute;
+            top: 30px;
+            right: 50px;
+        }
+
+        p1 {
+            color: rgba(0, 0, 0, 0.6);
+            padding: 9px;
+            margin: -10px;
+        }
+
+        #logo {
+            float: left;
+            position: absolute;
+            margin-top: -80px;
+            left: 310px;
+        }
+
+        #car {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            -moz-box-shadow: 0 0 10px #000;
+            -webkit-box-shadow: 0 0 10px #000;
+            box-shadow: 0 0 10px #000;
+            margin-bottom: 10px;
+        }
+
+        .table_cars {
+            border-collapse: collapse;
+            border-left: 3px solid #f9dd94;
+            border-right: 3px solid #f9dd94;
+            border-bottom: 3px solid #f9dd94;
+            font-family: Georgia, serif;
+            width: 50%;
+            margin: auto;
+        }
+
+        .table_cars caption {
+            background: #f9dd94;
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+            padding: 10px;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .3);
+            color: white;
+            font-family: Georgia, serif;
+            text-shadow: gray 0 -2px;
+            font-style: normal;
+            font-size: 26px;
+            text-align: center;
+
+        }
+
+        .table_cars td,
+        .table_cars th {
+            padding: 8px;
+        }
+
+        .table_cars th {
+            text-align: left;
+            font-size: 18px;
+        }
+
+        .table_cars tr:nth-child(2n) {
+            background: #E5E5E5;
+        }
+
+        .table_cars td:last-of-type {
+            text-align: center;
+
+        }
+
+        .table_cars a {
+            display: inline-block;
+            padding: 13px 50px;
+            background: #f9dd94;
+            position: relative;
+            cursor: pointer;
+            border-radius: 30px;
+
+        }
+
+
+        .buttons-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            padding: 20px 20px;
+            margin: 20px;
+            border-radius: 30px;
+            background-color: #f9dd94;
+            color: #000000;
+            font-size: 23px;
+            cursor: pointer;
+        }
+
+        .arrow-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 20px;
+        }
+
+
+        .arrow {
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 10px 0 10px 15px;
+            border-color: transparent transparent transparent #000000;
+            margin: 5px;
+        }
+
+        .button-head {
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            top: 10px;
+            right: 300px;
+        }
+
+        .buttons {
+            padding: 10px 20px;
+            margin: 20px;
+            border-radius: 30px;
+            background-color: #fff;
+            color: #000000;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        ul {
+            display: grid;
+            place-items: center;
+            counter-reset: li;
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            padding: 8px 16px;
+            border: none;
+            width: 600px;
+            text-align: left;
+        }
+
+        ul a {
+            position: relative;
+            display: block;
+            padding: .4em .4em .4em .8em;
+            margin: .5em 0 .5em 2.5em;
+            background: #D3D4DA;
+            color: #444;
+            text-decoration: none;
+            transition: all .3s ease-out;
+        }
+
+        ul a:hover {
+            background: #DCDDE1;
+        }
+
+        ul a:before {
+            content: counter(li);
+            counter-increment: li;
+            position: absolute;
+            left: -2.5em;
+            top: 50%;
+            margin-top: -1em;
+            background: #f9dd94;
+            height: 2em;
+            width: 2em;
+            line-height: 2em;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        ul a:after {
+            position: absolute;
+            content: "";
+            border: .5em solid transparent;
+            left: -1em;
+            top: 40%;
+            margin-top: -.5em;
+            transition: all .3s ease-out;
+        }
+
+
+        ul a:hover:after {
+            left: -.5em;
+            border-left-color: #f9dd94;
+        }
+
+        fieldset {
+            margin-bottom: 15px;
+            padding: 10px;
+            background: linear-gradient(to bottom, #ffffff 20%, #f9dd94 70%);
+            margin: auto;
+            width: 30%;
+
+        }
+
+        label {
+            width: 100px;
+            display: inline-block;
+            vertical-align: top;
+            margin: 6px;
+            margin-top: 10px;
+        }
+
+        input,
+        textarea {
+            width: 200px;
+            margin-top: 20px;
+        }
+
+        textarea {
+            height: 200px;
+        }
+
+        input[type=submit] {
+            width: 30%;
+            padding: 5px 5px;
+            border-radius: 60px;
+            background-color: #fff;
+            color: #000000;
+            font-size: 15px;
+            cursor: pointer;
+            margin: 0 auto;
+            display: block;
+
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>SPEED WHEELS</h1>
+        <p1>Ваша зручність - наш пріоритет</p>
+            <div>
+                <img id="logo" src="images/logo.png" alt="logo">
+            </div>
+            <div class="button-head">
+                <button class="buttons">НАШІ АВТО</button>
+                <button class="buttons">БРОНЮЮ</button>
+                <button class="buttons">КОНТАКТИ</button>
+            </div>
+            </div>
+            <h3>+380-73-298-99-00</h1>
+                <p3>Телефонуй 24/7</p>
+    </header>
+    </div>
+    <h2 align="center">Обирайте надійний та якісний авто-прокат для своєї наступної подорожі з нами</h1>
+        <p align="center"><a href="logic.html">Бізнес логіка нашого сайту!</a></p>
+        <img id="car" src="images/car.jpg" alt="car">
+
+        <div class="buttons-container">
+            <button class="button">ОБИРАЙ</button>
+            <div class="arrow-container">
+                <div class="arrow"></div>
+            </div>
+            <button class="button">БРОНЮЙ</button>
+            <div class="arrow-container">
+                <div class="arrow"></div>
+            </div>
+            <button class="button">МАНДРУЙ</button>
+        </div>
+
+        <table class="table_cars">
+            <caption>Найпопулярніші варіанти авто</caption>
+            <tr>
+                <th>Модель</th>
+                <th colspan="2">Ціна</th>
+            </tr>
+            <tr>
+                <td>Toyota Camry</td>
+                <td>2000₴</td>
+                <td><img src="images/Toyota Camry.png" alt="Toyota Camry" height="90" width="200"></td>
+            </tr>
+            <tr>
+                <td>Honda CR-V</td>
+                <td>2500₴</td>
+                <td><img src="images/Honda.png" alt="Honda CR-V" height="100" width="200"></td>
+            </tr>
+            <tr>
+                <td>Nissan Altima</td>
+                <td>1800₴</td>
+                <td><img src="images/Nissan Altima.png" alt="Nissan Altima" height="100" width="200"></td>
+            </tr>
+            <tr>
+                <td>Hyundai Sonata</td>
+                <td>1400₴</td>
+                <td><img src="images/Hyundai Sonata.png" alt="Hyundai Sonata" height="110" width="200"></td>
+            </tr>
+        </table>
+
+        <ul>
+            <caption>
+                <h2 style="text-align: center;font-size:30px;padding: 10px;">Наші послуги для Вашого комфорту </h2>
+            </caption>
+            <li class=""><a href="#">Допоможемо підібрати ідеальне авто для вашого відпочинку.</a></li>
+            <li class=""><a href="#">Додаткові послуги, такі як: навігація та авто-крісла.</a></li>
+            <li class=""><a href="#">Оформлюемо всі види страхування для вашої безпеки.</a></li>
+            <li class=""><a href="#">Доставляемо автомобіль у зручне для вас місце.</a></li>
+            <li class=""><a href="#">Консультації з власним менеджером 24/7.</a></li>
+        </ul>
+
+        <form action="#">
+            <h2 style="text-align: center;font-size:30px;padding: 10px;">Забронювати краще авто</h2>
+            <fieldset>
+                <label for="name">Ім'я та Призвище</label>
+                <input id="name"><br>
+                <label for="telephone">Номер телефону</label>
+                <input id="telephone"><br>
+                <label for="email">Електрона адреса</label>
+                <input id="email"><br>
+                <label for="date">Дата бронювання</label>
+                <input id="date"><br>
+                <p><input type="submit" value="Надіслати"></p>
+            </fieldset>
+
+        </form>
+
+</body>
+
+</html>
