@@ -1,2 +1,2 @@
 Посилання на сайт 
-https://julia20032303.github.io/Lab1-WEB/
+www.speed-wheels-lab1.com
